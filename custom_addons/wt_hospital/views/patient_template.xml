@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="patients_page" name="Hospital Patients">
+        <t t-call="website.layout">
+            <div class="container">
+                Hospital Patients Page
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>
+                                <strong>Patient ID</strong>
+                            </td>
+                            <td>
+                                <strong>Patient Name</strong>
+                            </td>
+                            <td>
+                                <strong>Age</strong>
+                            </td>
+                            <td>
+                                <strong>Gender</strong>
+                            </td>
+                            <td>
+                                <strong>Email</strong>
+                            </td>
+                            <td>
+                                <strong>Age Group</strong>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="patients" t-as="patient">
+                            <tr>
+                                <td>
+                                     <t t-esc="patient.name_seq"/>
+                                </td>
+                                <td>
+                                     <t t-esc="patient.patient_name"/>
+                                </td>
+                                <td>
+                                     <t t-esc="patient.patient_age"/>
+                                </td>
+                                <td>
+                                     <t t-esc="patient.gender"/>
+                                </td>
+                                <td>
+                                     <t t-esc="patient.age_group"/>
+                                </td>
+                                <td>
+                                     <t t-esc="patient.email_id"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>
